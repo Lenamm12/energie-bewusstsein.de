@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <title>
+      Energie-bewusstsein - Infos über Energiesparen, Energieeffizienz und
+      alternative Energiequellen
+    </title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <meta
+      name="description"
+      content="Das Infoportal zu Energieeffizienz, Energiesparen und alternativen Energiequellen vermittelt Energie-, Klima- und Umwelt-Bewusstsein"
+    />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Tulpen+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a
+        class="home active"
+        data-page="home"
+        style="display: flex; align-items: center"
+      >
+        <p class="tulpen-one-regular">Energie-bewusstsein.de</p>
+        <img
+          class="logo"
+          src="images/logo-transparent.png"
+          alt="Energie-Bewusstsein Logo"
+      /></a>
+      <nav id="nav" class="nav-links">
+        <a class="link" data-page="tipps"
+          ><i class="fa-solid fa-lightbulb"></i>Tipps</a
+        >
+        <a class="link" data-page="energie"
+          ><i class="fa-solid fa-fire"></i>Energie</a
+        >
+        <a class="link" data-page="elektrizitaet"
+          ><i class="fa-solid fa-bolt"></i>Elektrizität</a
+        >
+        <a class="link" data-page="heizung"
+          ><i class="fa-solid fa-bath"></i>Heizung & Sanitär</a
+        >
+        <a class="link" data-page="klima"
+          ><i class="fa-solid fa-tree"></i>Klima & Umwelt</a
+        >
+        <a class="link" data-page="mobilitaet"
+          ><i class="fa-solid fa-bus"></i>Mobilität</a
+        >
+        <a class="link" data-page="labor"
+          ><i class="fa-solid fa-wrench"></i>Labor</a
+        >
+        <a class="link" data-page="rechner"
+          ><i class="fa-solid fa-calculator"></i>Rechner</a
+        >
+        <div class="mobile-only">
+          <hr />
+          <a class="link" disabled href=""
+            ><i class="fa-solid fa-comments"></i>Forum</a
+          >
+          <a class="link" data-page="downloads">
+            <i class="fa-solid fa-file-arrow-down"></i>Downloads</a
+          >
+          <a class="link" data-page="links">
+            <i class="fa-solid fa-link"></i>Links</a
+          >
+          <hr />
+
+          <a class="link" data-page="impressum">Impressum</a>
+          <a class="link" data-page="ueber">Über</a>
+          <p>energie-bewusstsein.de © 2004 - <span id="year">2026</span></p>
+        </div>
+      </nav>
+      <div style="display: flex">
+        <button
+          id="dark-mode-toggle"
+          onclick="() => toggleDarkMode()"
+          aria-label="Dark-Mode-Button"
+        >
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+        <button
+          class="toggle"
+          onclick="
+            document.getElementById('nav').style.display == 'flex'
+              ? (document.getElementById('nav').style.display = 'none')
+              : (document.getElementById('nav').style.display = 'flex')
+          "
+          aria-label="Menu-Button"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <main id="aside" class="aside">
+      <div id="textDiv"></div>
+      <button id="toTop" title="Go to top">⬆</button>
+
+      </main>
+<script>
+      function updateYear() {
+        var yearElement = document.getElementById("year");
+        var currentYear = new Date().getFullYear();
+        yearElement.textContent = currentYear;
+      }
+
+      window.onload = updateYear;
+    </script>
+
+    <footer class="footer">
+      <div class="nav-links">
+        <p>energie-bewusstsein.de © 2004 - <span id="year">2026</span></p>
+        <a class="link" data-page="impressum">Impressum</a>
+        <a class="link" data-page="ueber">Über</a>
+        |
+        <a class="link" disabled href=""
+          ><i class="fa-solid fa-comments"></i>Forum</a
+        >
+        <a class="link" data-page="downloads">
+          <i class="fa-solid fa-file-arrow-down"></i>Downloads</a
+        >
+        <a class="link" data-page="links">
+          <i class="fa-solid fa-link"></i>Links</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
+

@@ -1,0 +1,236 @@
+<div id="Rechner" class="articleDiv">
+  <script src="rechner.js"></script>
+  <h1>Rechner</h1>
+  <p>
+    In dieser Rubrik stelle ich euch verschiedene PHP-Scripte zur Berechnung von
+    elektrischen Größen und Hilfestellungen für Umrechnungen bereit.
+  </p>
+  <p>
+    Falls du ein Script für eine andere Berechnung oder Hilfestellungen zu einer
+    Umrechnung benötigst, so sag es mir. Ich schaue dann, was sich machen lässt.
+  </p>
+  <h2>Berechnen der Betriebskosten eines Gerätes</h2>
+  <p>
+    Rechenbeispiel: Du möchtest wissen, wie hoch die Stromkosten für einen 80
+    Watt Röhrenbildschirm bei 10-stündiger Nutzung sind.
+  </p>
+  <p>
+    Hierzu gibts du unter Leistung "80" ein. Unter Betriebsdauer gibts du "10"
+    ein und wählst "Stunden" aus. Als letzte Angabe benötigt der Rechner die
+    Stromkosten, also die Kosten pro kiloWattstunde. Falls du dir nicht sicher
+    bist, wähle 18 Cent aus. Drücke nun auf Berechnen und das Ergebnis
+    erscheint.
+  </p>
+  <p>
+    Einige tpyische Leistungswerte findest du auch unter
+    <a href="?page=energie#Leistungsaufnahme"
+      >Leistungsaufnahme und Energiebedarf von Geräten</a
+    >
+  </p>
+
+  <div class="rechner">
+    <div class="rechnerInput">
+      <label for="leistung">Leistung</label>
+      <input type="number" id="leistung" min="0" />
+    </div>
+    <div class="rechnerInput">
+      <label for="betriebsdauer">Betriebsdauer</label>
+      <input type="number" id="betriebsdauer" min="0" />
+
+      <select id="betriebsdauerEinheit">
+        <option value="minuten">Minuten</option>
+        <option value="stunden">Stunden</option>
+        <option value="tage">Tage</option>
+        <option value="wochen">Wochen</option>
+        <option value="monate">Monate</option>
+        <option value="jahre">Jahre</option>
+      </select>
+    </div>
+    <div class="rechnerInput">
+      <label for="stromkosten">Stromkosten</label>
+      <input type="number" id="stromkosten" min="0" /> Cent/kWh
+    </div>
+
+    <button id="berechnen1">Berechnen</button>
+    <div class="rechnerOutput">
+      <label for="ergebnis1">Ergebnis</label>
+      <input type="text" id="ergebnis1" />
+    </div>
+  </div>
+
+  <h2>Berechnen der momentanen Leistungsaufnahme mittels Stromzähler</h2>
+  <p>
+    Mit einem Energiekostenmessgerät lässt sich sehr einfach der Energiebedarf
+    von Kleinverbrauchern messen. Möchte man hingegen die Leistungsaufnahme
+    eines gesamten Haushaltes oder die eines Großverbrauchers wie zum Beispiel
+    eines Durchlauferhitzers wissen, so kann man dies mittels einer Messung am
+    Stromzähler tun.
+  </p>
+  <p>
+    Man kann diese Methode auch anwenden, wenn man den Verdacht hat, dass sein
+    Stromzähler nicht in Ordnung ist oder dass jemand Strom klaut. Hierzu sollte
+    man vor der Messung unbedingt die Geräte ausschalten, deren
+    Leistungsaufnahmen während des Betriebes stark variieren. Dazu zählen
+    Kühlschränke (Kompressor läuft nicht ständig), Heizungsanlagen (Brenner
+    läuft nicht ständig) oder Computer (abhängig von Auslastung). Erst dann ist
+    das Messergebnis aussagekräftig.
+  </p>
+  <p>
+    Anleitung: Ermittele als erstes den Typ deines Zählers, diese Angabe steht
+    auf dem Stromzähler. 75 und 96 Umdrehungen pro 1 kWh sind übliche Werte.
+    Trage diesen Wert in das Feld Zählertyp ein. Lege nun je nach
+    Umdrehungsgeschwindigkeit eine Umdrehungszahl nach Gefühl fest: Dreht der
+    Zähler schnell wählt man 10 Umdrehungen, dreht er sehr langsam wählt man 1
+    Umdrehung. Nun misst man mit einer Stoppuhr die Zeit, die für diese Anzahl
+    Umdrehungen benötigt wird. Dank der roten Markierung auf der Drehscheibe des
+    Stromzählers ist diese Messung ganz einfach möglich. Gib nun diese Zeit ein.
+    Anschließend kannst du auf Berechnen drücken und die momentane
+    Leistungsaufnahme wird berechnet.
+  </p>
+  <p>Beispiel:</p>
+  <ul>
+    <li>Zählertyp 96 U/kWh wählen</li>
+    <li>10 Umdrehungen wählen</li>
+    <li>Für 10 Umdrehungen werden laut einer Stoppuhr 1:50 Minuten benötigt</li>
+    <li>
+      Die Berechnung ergibt eine momentane Leistungsaufnahme von rund 3,3kW
+      (z.B. Spülmaschine)
+    </li>
+  </ul>
+
+  <div class="rechner">
+    <div class="rechnerInput">
+      <label for="zaehler">Zählertyp</label>
+      <input type="number" id="zaehler" min="0" />
+    </div>
+    <div class="rechnerInput">
+      <label for="umdrehungen">Umdrehungen</label>
+      <input type="number" id="umdrehungen" min="0" />
+    </div>
+    <div class="rechnerInput">
+      <label for="zeit">benötigte Zeit</label>
+      <input type="number" id="stunden" min="0" />
+      <input type="number" id="minuten" min="0" />
+      <input type="number" id="sekunden" min="0" />
+    </div>
+    <button id="berechnen2">Berechnen</button>
+    <div class="rechnerOutput">
+      <label for="ergebnis2">Ergebnis</label>
+      <input type="text" id="ergebnis2" />
+    </div>
+  </div>
+
+  <h2>Lohnt sich die Anschaffung eines Neugerätes?</h2>
+  <p>
+    Oft wird gesagt, dass man sich Neugeräte kaufen sollte, um die Energiekosten
+    zu senken. Doch man muss zuerst einmal überprüfen, ob sich die Anschaffung
+    überhaupt lohnt!
+  </p>
+  <div class="rechner">
+    <h3>Altgerät</h3>
+    <div class="rechnerInput">
+      <label>Energiebedarf (kWh/Jahr)</label>
+      <input type="number" id="altVerbrauch" value="0" min="0" />
+    </div>
+
+    <h3>Neugerät</h3>
+    <div class="rechnerInput">
+      <label>Energiebedarf (kWh/Jahr)</label>
+      <input type="number" id="neuVerbrauch" value="0" min="0" />
+    </div>
+
+    <div class="rechnerInput">
+      <label>Kaufpreis (€)</label>
+      <input type="number" id="preis" value="0" min="0" />
+    </div>
+
+    <div class="rechnerInput">
+      <label>Herstellungsenergie (kWh, optional)</label>
+      <input
+        type="number"
+        id="herstellung"
+        placeholder="keine Angabe"
+        min="0"
+      />
+    </div>
+
+    <div class="rechnerInput">
+      <label>Stromkosten (Cent/kWh)</label>
+      <input type="number" id="strompreis" value="17" min="0" />
+    </div>
+
+    <button id="berechnen3">Berechnen</button>
+
+    <div class="rechnerOutput">
+      <label>Ergebnis</label>
+      <input type="text" id="ergebnis3" />
+    </div>
+  </div>
+
+  <h2>Umrechnungen und Hochrechnungen bei Energiekostenmessgeräten</h2>
+
+  <p>
+    Möchte man wissen, wie viel Energie ein Gerät (Kühlschrank, Wasserboiler,
+    usw.) innerhalb von 24 Stunden benötigt, so kann man direkt nach 24 Stunden
+    wieder zu dem Energiekosten-Messgerät gehen, um die Messung zu stoppen.
+  </p>
+
+  <p>Mit etwas Rechnerei ist man hingegen viel flexibler:</p>
+
+  <ul>
+    <li>
+      Man lässt das Messgerät laufen und stoppt es nach einer beliebigen Zeit
+      wieder, z. B. nach 23 Stunden und 20 Minuten.
+    </li>
+    <li>Die Minuten werden nun in Stunden umgerechnet.</li>
+    <li>
+      Anschließend muss man auf 1 Stunde normieren, d. h. umrechnen, wie viel
+      das angeschlossene Gerät in 1 Stunde benötigen würde.
+    </li>
+    <li>
+      Zum Schluss kann man ganz einfach auf 24 Stunden oder auf ein Jahr
+      hochrechnen.
+    </li>
+  </ul>
+
+  <h3>Rechenbeispiel</h3>
+
+  <p>
+    Messdauer: <strong>23 Stunden 20 Minuten</strong><br />
+    Energieverbrauch: <strong>1,45 kWh</strong>
+  </p>
+
+  <p>
+    Zuerst müssen die 20 Minuten in Stunden (h = engl. "hour" = Stunde)
+    umgerechnet werden:<br />
+    <strong>20 min / (60 min/h) = 1/3 h = 0,333 h</strong>
+  </p>
+
+  <p>
+    Insgesamt also:<br />
+    <strong>23 h + 0,333 h = 23,333 Stunden</strong>
+  </p>
+
+  <p>
+    Verbrauch pro Stunde:<br />
+    <strong>1,45 kWh / 23,333 h = 0,06214 kWh/h</strong>
+  </p>
+
+  <p>
+    Hochrechnung auf 24 Stunden:<br />
+    <strong>0,06214 kWh/h × 24 h = 1,4914 kWh</strong>
+  </p>
+
+  <p>
+    Hochrechnung auf ein Jahr:<br />
+    <strong>0,06214 kWh/h × 8760 h = 544,346 kWh</strong>
+  </p>
+
+  <p>
+    Bitte nicht verwirren lassen von den vielen Maßeinheiten – diese haben ihre
+    Berechtigung. Ohne sie wäre es nicht möglich, 100&nbsp;%ig das korrekte
+    Ergebnis zu bekommen. Wenn man sich einmal daran gewöhnt hat, alle Einheiten
+    durchgehend hinzuschreiben, werden Rechnungen in Zukunft insgesamt einfacher
+    sein.
+  </p>
+</div>
